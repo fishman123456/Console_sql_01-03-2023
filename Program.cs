@@ -9,6 +9,7 @@ string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=L
 string sqlExpression = "SELECT * FROM Authors";
 using (SqlConnection connection = new SqlConnection(connectionString))
 {
+    Console.WriteLine(sqlExpression+"\n");
     connection.Open();
     SqlCommand command = new SqlCommand(sqlExpression, connection);
     SqlDataReader reader = command.ExecuteReader();
